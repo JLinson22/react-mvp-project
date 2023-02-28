@@ -1,38 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
+  background-color: blanchedalmond;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.check-box {
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.clear-btn {
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 19rem;
+  margin-top: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.delete-btn {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.homepage-div {
+  margin-top: 20rem;
+}
+
+.list-div {
+  margin-top: 2rem;
+}
+
+.num-completed {
+  margin-top: 3rem;
+  margin-right: 19.1rem;
+}
+
+.top-text {
+  font-size: 60px;
+  margin-bottom: 5rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.todo-input {
+  background-color: ghostwhite;
+  border-radius: 6px;
+}
+
+.todo-btn {
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+.todo-list {
+  border: 3px solid black;
+  width: 500px;
+  margin: auto;
+  background-color: white;
+  border-radius: 12px;
+  
+}
+
+.todo-div {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  font-size: 20px;
+  border: 2px solid black;
+  height: 50px;
+  width: 300px;
+  border-radius: 12px;
+  background-color: lightskyblue;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-text {
+  margin-top: 0.7rem;
+  margin-left: 0.5rem;
+  width: 75%;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-title {
+  font-size: large;
+  font-weight: 700;
+}
+
+.todo-content {
+  font-size: medium;
+  font-weight: 400;
 }
