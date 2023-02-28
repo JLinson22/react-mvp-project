@@ -1,7 +1,7 @@
 const TodoForm = (props) => {
 
    const UpdateTodo = (e) => {
-    
+
     e.preventDefault()
     let submitBtn = document.querySelector('.todo-btn')
     let setContent = document.querySelector('#content')
@@ -14,6 +14,8 @@ const TodoForm = (props) => {
         todoObj.completed = props.completed
         
         if (submitBtn.id == id) {
+            const filteredItems = props.todos.map((todo) => todo.id == id ? {...todo, content: props.value} : todo)
+            props.setTodos(filteredItems)
             const response = await fetch(`/todos/${id}`,
             {
                 method: 'PUT',
@@ -23,7 +25,6 @@ const TodoForm = (props) => {
                 body: JSON.stringify(todoObj)
             })
             const data = await response.json()
-            console.log(data)
             props.setValue('')
         }
     })
@@ -35,6 +36,8 @@ const TodoForm = (props) => {
     props.todos.map(async (todo) => {
       let id = todo.id
       if (todo.completed === true) {
+          const filteredItems = props.todos.filter((todo) => todo.completed !== true)
+          props.setTodos(filteredItems)
           const res = await fetch(`/todos/${id}`,
           {
               method: 'DELETE'
@@ -61,6 +64,7 @@ const TodoForm = (props) => {
             body: JSON.stringify(todoObj)
         })
         const data = await response.json()
+        props.setTodos((todo) => ([...todo, data[0]]))
         props.setValue('')
     }
 

@@ -17,7 +17,7 @@ const [value, setValue] = useState('')
       setTodos(data)
     }
     getData()
-  }, [todos])
+  }, [])
 
   return (
     

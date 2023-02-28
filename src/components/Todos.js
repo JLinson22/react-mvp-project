@@ -1,15 +1,12 @@
 const Todos = (props) => {
 
-    const DeleteTodo = (e) => {
-        props.todos.map(async (todo) => {
-            let id = todo.id
-            if (e.target.id == id) {
+    const DeleteTodo = async (id) => {
+        const filteredItems = props.todos.filter((todo) => todo.id !== id)
+                props.setTodos(filteredItems)
                 const res = await fetch(`/todos/${id}`,
                 {
                     method: 'DELETE'
                 })
-            }
-        })
     }
 
     const toggleTodo = (id) => {
@@ -44,7 +41,7 @@ const Todos = (props) => {
                     </div>
                     <div className='btn-div'>
                         <button id={todo.id} onClick={submitButtonChange} className="edit-btn">edit</button> 
-                        <button id={todo.id} onClick={DeleteTodo} className="delete-btn">delete</button>
+                        <button id={todo.id} onClick={() => {DeleteTodo(todo.id)}} className="delete-btn">delete</button>
                     </div>
                 </div>
             ))}
