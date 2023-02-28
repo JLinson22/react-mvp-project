@@ -2,6 +2,7 @@ import express from 'express';
 import postgres from 'postgres';
 import dotenv from 'dotenv'
 import cors from 'cors'
+import path from 'path'
 
 dotenv.config()
 
@@ -11,7 +12,16 @@ const PORT = process.env.PORT
 
 app.use(express.json())
 app.use(express.static('public'))
+app.use(express.static(path.join(process.cwd(), '../build')))
 app.use(cors())
+
+app.get('/', (req, res) => {
+    try {
+        res.sendFile(path.join(process.cwd(), '../build', 'index.html'))
+    } catch (error) {
+        res.json(error)
+    }
+})
 
 app.get('/todos', async (req, res) => {
     try {
