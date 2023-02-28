@@ -5,7 +5,6 @@ import TodoForm from './components/TodoForm.js';
 
 function App() {
 const [todos, setTodos] = useState([])
-const [newTodo, setNewTodo] = useState({})
 const [completed, setCompleted] = useState(false)
 const [isUpdating, setIsUpdating] = useState(false)
 const [value, setValue] = useState('')
@@ -28,8 +27,6 @@ const [value, setValue] = useState('')
         <TodoForm 
         todos={todos}
         setTodos={setTodos}
-        newTodo={newTodo}
-        setNewTodo={setNewTodo}
         completed={completed}
         setCompleted={setCompleted}
         isUpdating={isUpdating}
@@ -40,10 +37,6 @@ const [value, setValue] = useState('')
         <Todos 
         todos={todos}
         setTodos={setTodos}
-        newTodo={newTodo}
-        setNewTodo={setNewTodo}
-        completed={completed}
-        setCompleted={setCompleted}
         isUpdating={isUpdating}
         setIsUpdating={setIsUpdating}
         />

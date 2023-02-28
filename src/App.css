@@ -5,6 +5,7 @@
 
 .check-box {
   cursor: pointer;
+  accent-color: white;
 }
 
 .clear-btn {
@@ -12,6 +13,9 @@
   cursor: pointer;
   margin-right: 19rem;
   margin-top: 0.5rem;
+  background-color: papayawhip;
+  border-color: silver;
+  font-style: italic;
 }
 
 .delete-btn {
@@ -37,6 +41,7 @@
 .num-completed {
   margin-top: 3rem;
   margin-right: 19.1rem;
+  font-size: 20px;
 }
 
 .top-text {
@@ -49,12 +54,17 @@
 .todo-input {
   background-color: ghostwhite;
   border-radius: 6px;
+  border-color: silver;
+  font-style: italic;
 }
 
 .todo-btn {
   border-radius: 6px;
   cursor: pointer;
   margin-left: 0.25rem;
+  background-color: papayawhip;
+  border-color: silver;
+  font-style: italic;
 }
 
 .todo-list {
@@ -63,6 +73,7 @@
   margin: auto;
   background-color: white;
   border-radius: 12px;
+  box-shadow: 10px 20px rgb(222, 201, 169);
   
 }
 
@@ -75,7 +86,7 @@
   height: 50px;
   width: 300px;
   border-radius: 12px;
-  background-color: lightskyblue;
+  background-color: powderblue;
   display: flex;
 }
 
