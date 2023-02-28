@@ -45,7 +45,7 @@ app.get('/todos/:id', async (req, res) => {
 app.post('/todos', async (req, res) => {
     try {
         const {content, completed} = req.body
-        const newTodo = await sql`INSERT INTO todos (content, completed) VALUES (${content}, ${completed}) returning content, completed`
+        const newTodo = await sql`INSERT INTO todos (content, completed) VALUES (${content}, ${completed}) returning id, content, completed`
         res.json(newTodo)
     } catch (error) {
         res.json(error)
