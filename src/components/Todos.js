@@ -27,9 +27,11 @@ const Todos = (props) => {
         submitBtn.id = e.target.id
     }
 
-    const handleCheckbox = (e) => {
-        e.target.checked = true
+    const handleCheckbox = (id) => {
+        const filterItems = props.todos.map((todo) => todo.id === id ? {...props.todos, completed: !todo.completed} : todo)
+        props.setTodos(filterItems)
     }
+
 
     return (
         
@@ -37,7 +39,7 @@ const Todos = (props) => {
             {props.todos.map((todo) => (
                 <div className="todo-div" key={todo.id}>
                     <div className="todo-text">
-                        <input className="check-box" type="checkbox" onClick={handleCheckbox} checked={todo.completed} onChange={() => toggleTodo(todo.id)} />
+                        <input className="check-box" type="checkbox" onClick={() => {handleCheckbox(todo.id)}} checked={todo.completed} onChange={() => toggleTodo(todo.id)} />
                         {todo.content}
                     </div>
                     <div className='btn-div'>

@@ -10,25 +10,6 @@ const [completed, setCompleted] = useState(false)
 const [isUpdating, setIsUpdating] = useState(false)
 const [value, setValue] = useState('')
 
-  const toggleTodo = (id) => {
-    const newTodos = [...todos]
-    const todo = newTodos.find(todo => todo.id === id)
-    todo.completed = !todo.completed
-    setTodos(newTodos)
-  }
-
-  const handleClearTodos = (e) => {
-    todos.map(async (todo) => {
-      let id = todo.id
-      if (todo.completed === true) {
-          const res = await fetch(`/todos/${id}`,
-          {
-              method: 'DELETE'
-          })
-      }
-  })
-  }
-
   useEffect(() => {
     const getData = async () => {
       const response = await fetch('/todos')
@@ -65,7 +46,6 @@ const [value, setValue] = useState('')
         setCompleted={setCompleted}
         isUpdating={isUpdating}
         setIsUpdating={setIsUpdating}
-        toggleTodo={toggleTodo}
         />
       </div>
     </div>

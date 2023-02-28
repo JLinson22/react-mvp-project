@@ -31,7 +31,7 @@ const TodoForm = (props) => {
     setContent.placeholder = 'create a new task...'
    }
 
-   const handleClearTodos = (e) => {
+   const handleClearTodos = () => {
     props.todos.map(async (todo) => {
       let id = todo.id
       if (todo.completed === true) {
